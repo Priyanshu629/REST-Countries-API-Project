@@ -19,7 +19,7 @@ function useGetCountryDetails({countryId}) {
 
         useEffect(()=>{
              getCountryDetails()    
-        },[name])
+        },[countryId])
 
   return details
 }

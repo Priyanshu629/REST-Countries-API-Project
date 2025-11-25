@@ -1,0 +1,3 @@
+.scrollbar::-webkit-scrollbar-thumb{
+    width: 2px;
+}

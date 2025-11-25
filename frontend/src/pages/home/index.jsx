@@ -6,6 +6,7 @@ import { useTheme } from '../../context/theme'
 import { BrowserRouter,Routes,Route } from 'react-router-dom'
 import CountryDetails from '../country-details'
 import AddCountry from '../add-country'
+import UpdateCountry from '../update-country'
 
 function Home() {
   const {theme} = useTheme()
@@ -19,6 +20,7 @@ function Home() {
         <Routes>
           <Route index element={<CountryList/>}/>
           <Route path='details/:countryId' element={<CountryDetails/>}/>
+          <Route path='update-country/:countryId' element={<UpdateCountry/>}/>
           <Route path='add-country' element={<AddCountry/>}/>
           
         </Routes>

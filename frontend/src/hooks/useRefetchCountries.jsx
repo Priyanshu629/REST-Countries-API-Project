@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect } from "react"
+import { useSearchFilter } from "../context/search-filter"
 
-function useGetAllCountries(setFilteredCountries,setCountries) {
-  
- const [regions , setRegions] = useState([])
 
- async function getAllCountries(){
+function useRefetchCountries() {
+const {setCountries,setFilteredCountries,setRegions}= useSearchFilter()
+
+ async function reFetch(){
 
      try {
            let response = await fetch("http://localhost:4000/api/country/get-countries")
             let data = await response.json()
             setCountries(data.countries)
             setFilteredCountries(data.countries)
-            setRegions(data?.regions)
+            setRegions(data.regions)
+
+            
           
      } catch (error) {
           console.log(error.message)
@@ -21,10 +24,10 @@ function useGetAllCountries(setFilteredCountries,setCountries) {
         }
 
         useEffect(()=>{
-             getAllCountries()
+             reFetch()
         },[])
-// return {getAllCountries,regions}
-  
+
+    return reFetch
 }
 
-export default useGetAllCountries
+export default useRefetchCountries
