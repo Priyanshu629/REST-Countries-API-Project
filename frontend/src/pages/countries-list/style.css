@@ -1,0 +1,25 @@
+.country-list{
+    width: 90%;
+    padding: 10px;
+    margin: auto;
+    display: flex ;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    min-height: screen;
+    
+
+}
+.msg{
+    font-style: italic;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+    color: rgb(25, 196, 196);
+}
+.content{
+    width: full;
+    min-height: screen;
+    margin-top: 15px;
+}

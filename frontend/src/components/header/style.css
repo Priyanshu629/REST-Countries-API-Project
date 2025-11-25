@@ -1,0 +1,23 @@
+header{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 1px 1px 5px black;
+    padding: 15px;
+    align-items: center;
+}
+.theme-btn{
+    padding: 5px;
+   display: flex;
+   gap: 3px;
+   align-items: center;
+   font-weight: bold;
+   cursor: pointer;
+   background: white;
+   outline: none;
+   border: none;
+}
+.theme-btn:hover{
+    color: blue;
+}

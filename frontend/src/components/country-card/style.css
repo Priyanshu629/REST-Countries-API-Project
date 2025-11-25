@@ -1,0 +1,32 @@
+.country{
+    max-width: 250px;
+    min-height: 250px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 1px 1px 5px gray;
+    gap: 10px;
+    transition: all 200ms;
+   
+    
+}
+.country div{
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    gap: 5px;
+    margin-top: 15px;
+}
+.country:hover{
+    transform: scale(1.1);
+}
+.see-details{
+    margin: 10px 0;
+    text-decoration: none;
+    border: 1px solid rgb(199, 228, 199);
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    color: orange;
+}
