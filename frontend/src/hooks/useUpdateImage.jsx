@@ -22,7 +22,7 @@ function useUpdateImage({ flagImageId, countryId }) {
       setIsImageUpdating(true)
 
       let response = await fetch(
-        `http://localhost:4000/api/country/update-image/${countryId}?flagImageId=${flagImageId}`,
+        `${import.meta.env.VITE_BASE_BACKEND_URL}/update-image/${countryId}?flagImageId=${flagImageId}`,
         {
           method: "PATCH",
           body: imageData,

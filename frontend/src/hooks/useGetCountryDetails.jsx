@@ -7,7 +7,7 @@ function useGetCountryDetails({countryId}) {
       async function getCountryDetails(){
 
         try {
-           let response = await fetch(`http://localhost:4000/api/country/get-country/${countryId}`)
+           let response = await fetch(`${import.meta.env.VITE_BASE_BACKEND_URL}/get-country/${countryId}`)
          let details = await response.json()
          
           setDetails(details.country)

@@ -5,12 +5,14 @@ import useGetCountryDetails from '../../hooks/useGetCountryDetails'
 
 function CountryDetails() {
     const {countryId} = useParams()
+    
     const details = useGetCountryDetails({countryId})
+
     const {name,flag,nativeName,population,region,subRegion,capital,currency,language,borderCountry}= details
 
     let defaultValue = "No Data Available"
    
-   console.log(details)
+  
         
   return (
     <div className='details-page'>

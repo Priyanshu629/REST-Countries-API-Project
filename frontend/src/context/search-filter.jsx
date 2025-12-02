@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import useGetAllCountries from "../hooks/useGetAllCountries";
-import useGetRegions from "../hooks/useGetRegions";
+
 
 const searchFilterContext = createContext();
 
@@ -13,6 +13,8 @@ export const SearchFilterProvider = ({ children }) => {
 
   
     useGetAllCountries(setFilteredCountries, setCountries, setRegions);
+
+ 
  
 
   // Searching and Filtering

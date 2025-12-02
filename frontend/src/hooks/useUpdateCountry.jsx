@@ -51,7 +51,7 @@ function useUpdateCountry({ countryId }) {
       console.log(updatedDetails);
 
       let response = await fetch(
-        `http://localhost:4000/api/country/update-country/${countryId}`,
+        `${import.meta.env.VITE_BASE_BACKEND_URL}/update-country/${countryId}`,
         {
           method: "PATCH",
           headers: {

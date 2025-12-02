@@ -12,7 +12,7 @@ function UpdateCountry() {
 
  const {setImage,updateImage,isImageUpdating} = useUpdateImage({flagImageId,countryId})
 
- console.log(countryData?.flagImageId)
+
 
   return (
    <main className="w-[90%] mx-auto p-2 my-2">

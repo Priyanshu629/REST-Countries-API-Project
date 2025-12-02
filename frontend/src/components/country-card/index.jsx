@@ -1,9 +1,6 @@
-import React, { useState } from "react";
-// import "./style.css";
+
 import { Link, useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
-import useRefetchCountries from "../../hooks/useRefetchCountries";
-import { useSearchFilter } from "../../context/search-filter";
+import useDeleteCountry from "../../hooks/useDeleteCountry";
 
 
 function CountryCard({
@@ -16,33 +13,7 @@ function CountryCard({
   capital,
 }) {
   
-  const [isDeleting, setIsDeleting] = useState(false);
-  const reFetch = useRefetchCountries()
- 
-
-  async function deleteCountry() {
-    setIsDeleting(true);
-    try {
-      let response = await fetch(
-        `http://localhost:4000/api/country/delete-country/${_id}?imageId=${flagImageId}`,
-        {
-          method: "DELETE",
-        }
-      );
-
-      let data = await response.json();
-
-      if (response.ok) {
-        // location.reload();
-        await reFetch()
-        toast.success(data.message);
-        setIsDeleting(false);
-      }
-    } catch (error) {
-      toast.error(error.message);
-      setIsDeleting(false);
-    }
-  }
+const {deleteCountry,isDeleting} = useDeleteCountry({_id,flagImageId})
 
   return (
     <div className="max-w-[300px] rounded-md p-2 flex gap-4 flex-col border-2">

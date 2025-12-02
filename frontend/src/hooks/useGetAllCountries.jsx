@@ -7,7 +7,7 @@ function useGetAllCountries(setFilteredCountries,setCountries) {
  async function getAllCountries(){
 
      try {
-           let response = await fetch("http://localhost:4000/api/country/get-countries")
+           let response = await fetch(`${import.meta.env.VITE_BASE_BACKEND_URL}/get-countries`)
             let data = await response.json()
             setCountries(data.countries)
             setFilteredCountries(data.countries)

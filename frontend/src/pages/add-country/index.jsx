@@ -3,16 +3,19 @@ import useAddCountry from "../../hooks/useAddCountry";
 import "./style.css"
 
 function AddCountry() {
-  const { countryData, setCountryData, handleAddCountry, isAdding } =
-    useAddCountry();
+
+  const { countryData, setCountryData, handleAddCountry, isAdding } =  useAddCountry();
+  
   return (
     <main className="w-[90%] mx-auto p-2 my-2">
       <div className="max-w-[400px] mx-auto border-2 border-orange-300 p-3  rounded-md ">
         <h1 className="font-bold text-xl text-center my-2">Add Country</h1>
 
         <div className=" h-[400px] overflow-y-scroll scrollbar    flex flex-col gap-3">
+
           <div className="">
             <input
+              id="flag"
               className="p-2 border-2 w-full placeholder-yellow-500 rounded-md border-green-400"
               type="file"
               onChange={(e) =>
@@ -20,8 +23,14 @@ function AddCountry() {
                   return { ...prev, flag: e.target.files[0] };
                 })
               }
+              hidden
+
             />
           </div>
+
+            <label htmlFor="flag" className="border-2 text-center p-2 rounded-sm w-full italic cursor-pointer hover:bg-orange-200 bg-orange-300">
+              {countryData?.flag?`Selected Image  => ${countryData?.flag?.name}`:"Select Image"}
+            </label>
 
           <div className="">
             <input

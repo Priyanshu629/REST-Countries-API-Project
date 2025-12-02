@@ -11,9 +11,13 @@ export const addCountry = async(req,res)=>{
        if(!name || !capital || !nativeName || !region || !subRegion || !currency || !population || !language || !borderCountry ){
         return res.status(400).json({success : false , message:"All the fields are required"})
        }
+
+
        if(!req.file){
         return res.status(400).json({success:false,message :"flag image is required"})
        }
+
+
        let flagImage = req.file?.path;
 
        let  flagImageId = req.file?.filename;
@@ -32,6 +36,7 @@ export const addCountry = async(req,res)=>{
         flagImageId
 
        })
+       
        if(newCountry){
         return res.status(201).json({success:true,message : "Country added successfully"})
        }

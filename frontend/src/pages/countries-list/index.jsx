@@ -9,7 +9,6 @@ function CountryList() {
 
   // UI messages
 
-  console.log(filteredCountries)
 
   let msg = `Showing result for "${searchText}"`;
   let filterMsg = `Showing countries of the region "${region}"`;
